@@ -7,6 +7,7 @@
 <struts>
 
     <constant name="struts.devMode" value="true" />
+    <constant name="struts.action.excludePattern" value="/controllers/.*"/>
 
     <package name="user" namespace="/User" extends="struts-default">
         <action name="Welcome" class="com.struts_migration1.action.WelcomeUserAction" method="execute">
