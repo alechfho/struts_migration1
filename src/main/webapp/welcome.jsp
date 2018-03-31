@@ -10,5 +10,14 @@
     <s:property value="userName" />
 </h2>
 
+<table border="1">
+    <s:iterator value="users" >
+    <tr>
+        <td><s:property value="userName"/></td><td><s:property value="firstName"/></td>
+    </tr>
+
+    </s:iterator>
+</table>
+
 </body>
 </html>

@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="struts_migration1" target="1.5" />
+      <module name="struts_migration1" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

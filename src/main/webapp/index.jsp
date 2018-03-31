@@ -3,7 +3,7 @@
 
 <html>
 <body>
-<h2>Hello World 3!</h2>
+<h2>Hello World 5!</h2>
 
 <s:form action="/User/Welcome">
     <s:textfield name="userName" label="Username" />
