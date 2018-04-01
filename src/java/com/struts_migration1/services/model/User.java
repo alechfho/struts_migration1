@@ -5,6 +5,10 @@ public class User {
     private String userName;
     private String firstName;
 
+    public User() {
+
+    }
+
     public User(String userName, String firstName) {
         this.userName = userName;
         this.firstName = firstName;

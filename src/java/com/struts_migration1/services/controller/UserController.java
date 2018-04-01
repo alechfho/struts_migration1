@@ -1,21 +1,18 @@
 package com.struts_migration1.services.controller;
 
-import com.struts_migration1.services.model.User;
+import com.struts_migration1.services.model.UserList;
 import com.struts_migration1.services.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
-@Controller
+@RestController
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @GetMapping("controllers/users")
-    public List<User> getUsers() {
+    @GetMapping(value = "/users")
+    public @ResponseBody UserList getUsers() {
         return userService.getUsers();
     }
 }

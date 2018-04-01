@@ -2,6 +2,7 @@ package com.struts_migration1.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.struts_migration1.services.model.User;
+import com.struts_migration1.services.model.UserList;
 import com.struts_migration1.services.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -21,7 +22,7 @@ public class WelcomeUserAction extends ActionSupport {
 
     @Override
     public String execute() throws Exception {
-        this.users = userService.getUsers();
+        this.users = userService.getUsers().getUserList();
         return SUCCESS;
     }
 
