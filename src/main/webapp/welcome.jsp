@@ -3,6 +3,7 @@
 <html>
 <head>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
 <h1>Struts 2 Hello World Example</h1>
@@ -22,18 +23,18 @@
     </s:iterator>
 </table>
 
-<div id="mytable">
-    <ol>
+<div id="userTable">
+    <ul>
         <li v-for="user in users">
-            {{ user.firstName }}
+            {{user.userName}} {{ user.firstName }}
         </li>
-    </ol>
+    </ul>
 </div>
 
 
 <script>
-    var app4 = new Vue({
-        el: '#mytable',
+    var userList = new Vue({
+        el: '#userTable',
         data: {
             users: []
         },
@@ -42,14 +43,15 @@
         },
         methods: {
             fetchData: function () {
-                var xhr = new XMLHttpRequest()
                 var self = this
-                xhr.open('GET', 'http://localhost:8080/controllers/users')
-                xhr.onload = function () {
-                    self.users = JSON.parse(xhr.responseText)
-                    console.log(xhr.responseText)
-                }
-                xhr.send()
+                axios.get('/controllers/users')
+                    .then(function (response) {
+                        console.log(response.data);
+                        self.users = response.data
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
             }
         }
     })
