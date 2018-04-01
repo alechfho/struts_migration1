@@ -1,7 +1,6 @@
 package com.struts_migration1.services.service;
 
 import com.struts_migration1.services.model.User;
-import com.struts_migration1.services.model.UserList;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,13 +14,13 @@ public class UserServiceImpl implements UserService {
     private UserServiceImpl() {
         users = new ArrayList<>();
         users.add(new User("user1", "Alec"));
+        users.add(new User("user2", "Ben"));
+        users.add(new User("user3", "Max"));
         users.add(new User("user2", "Tomasz"));
     }
 
     @Override
-    public UserList getUsers() {
-        UserList userList = new UserList();
-        userList.setUserList(users);
-        return userList;
+    public List<User> getUsers() {
+        return users;
     }
 }
